@@ -1,0 +1,83 @@
+
+@each $name,
+$theme in $themes-color {
+
+
+    .bg-#{$name} {
+        background-color: map-get($theme, 'default-background-color') !important;
+        color           : map-get($theme, 'default-color') !important;
+    }
+
+    .text-#{$name} {
+        color: darken(map-get($theme, 'default-background-color'), 5%) !important;
+    }
+
+    .border-#{$name} {
+        border-color: darken(map-get($theme, 'default-background-color'), 5%) !important;
+    }
+
+
+
+    .btn-#{$name} {
+        box-shadow: $box-shadow;
+        transition: box-shadow 200ms;
+
+        &:hover {
+            box-shadow: $box-shadow-hover;
+        }
+
+        &:not(:disabled):active {
+            box-shadow: $box-shadow-activate;
+        }
+    }
+
+    .btn-#{$name}-dark,
+    .btn-#{$name}-white,
+    .btn-#{$name} {
+        border          : solid 1px $border-color-dark;
+        background-color: map-get($theme, 'default-background-color') !important;
+        color           : map-get($theme, 'default-color') !important;
+
+        &:hover {
+            background-color: map-get($theme, 'hover-background-color') !important;
+            color           : map-get($theme, 'hover-color') !important;
+
+        }
+
+        &:focus {
+            background-color: map-get($theme, 'hover-background-color') !important;
+            color           : map-get($theme, 'hover-color') !important;
+        }
+
+        &:active {
+            background-color: map-get($theme, 'active-background-color') !important;
+            color           : map-get($theme, 'active-color') !important;
+        }
+
+        &:disabled,
+        &.disabled {
+            background-color: map-get($theme, 'disabled-background-color') !important;
+            color           : map-get($theme, 'disabled-color') !important;
+
+            &:focus {
+                background-color: map-get($theme, 'disabled-background-color') !important;
+                color           : map-get($theme, 'disabled-color') !important;
+            }
+
+            :active {
+                background-color: map-get($theme, 'disabled-background-color') !important;
+                color           : map-get($theme, 'disabled-color') !important;
+            }
+        }
+
+
+    }
+
+    .btn-#{$name}-dark {
+        border-color: $border-color-dark;
+    }
+
+    .btn-#{$name}-white {
+        border-color: $border-color-white;
+    }
+}

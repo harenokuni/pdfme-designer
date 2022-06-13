@@ -1,0 +1,220 @@
+
+.item1 {
+  @media screen and (min-width: #{ 0 }px) and (max-width: #{ 1600 - 0.1}px) {
+    width: 10px;
+  }
+}
+.fontawoseme {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+}
+
+// cursor-pointer
+// cursor-default
+// pointer-event-none
+
+//bootstrap css 
+
+
+// d-flex
+// flex-row
+// flex-row-reverse
+
+// flex-column
+// flex-wrap
+// flex-nowrap
+
+// justify-content-start
+// justify-content-end
+// justify-content-center
+// justify-content-between
+// justify-content-around
+// justify-content-evenly
+
+// align-items-start
+// align-items-end
+// align-items-center
+// align-items-baseline
+// align-items-stretch
+
+// flex-grow-0
+// flex-grow-1
+// flex-shrink-0
+// flex-shrink-1
+
+$color-text-1  :#000000;
+
+$color-text-2 :#333333;
+$color-text-3 :#555555;
+
+$color-text-3 :#cc6600;
+$color-text-3 :#f68708;
+
+$color-theme0  :#213a5f;
+$color-theme1  :#447aca;
+$color-theme2  :#9cd3ff;
+$color-link    :#CDF727;
+$color-success :#0f922d;
+$color-download:#0c7424;
+$color-action  :#f68708;
+$color-info    :#1CA5B8;
+$color-caution :#ff5e00;
+$color-paper   :#F0EBE6;
+$color-warning :#ebc312;
+$color-danger  :#e03a3a;
+$color-label   :#717f93;
+
+
+.flextemplate {
+  display        : flex;
+  justify-content: center;
+  align-items: center;
+
+
+  display        : flex;
+  flex-direction : row;
+  flex-wrap      : nowrap;
+  justify-content: flex-start;
+  align-items    : center;
+
+  display       : flex;
+  //子要素の並ぶ向き
+  flex-direction: row;
+  flex-direction: row-reverse;
+  flex-direction: column;
+  flex-direction: column-reverse;
+  // row（初期値）… 子要素を左から右に配置
+  // row-reverse … 子要素を右から左に配置
+  // column … 子要素を上から下に配置
+  // column-reverse … 子要素を下から上に配置
+
+
+  // 子要素の折り返し
+  flex-wrap: nowrap;
+  flex-wrap: wrap;
+  flex-wrap: wrap-reverse;
+  // nowrap（初期値）… 子要素を折り返しせず、一行に並べる
+  // wrap … 子要素を折り返し、複数行に上から下へ並べる
+  // wrap-reverse … 子要素を折り返し、複数行に下から上へ並べる
+
+
+  // 水平方向の揃え
+  justify-content: flex-start;
+  justify-content: flex-end;
+  justify-content: center;
+  justify-content: space-between;
+  justify-content: space-around;
+  // flex-start（初期値）… 行の開始位置から配置。左揃え。
+  // flex-end … 行末から配置。右揃え。
+  // center … 中央揃え
+  // space-between … 最初と最後の子要素を両端に配置し、残りの要素は均等に間隔をあけて配置
+  // space-around … 両端の子要素も含め、均等に間隔をあけて配置
+
+
+  // 垂直方向の揃え
+  align-items: stretch;
+  align-items: flex-start;
+  align-items: flex-end;
+  align-items: center;
+  align-items: baseline;
+  // stretch（初期値）… 親要素の高さ、またはコンテンツの一番多い子要素の高さに合わせて広げて配置
+  // flex-start … 親要素の開始位置から配置。上揃え。
+  // flex-end … 親要素の終点から配置。下揃え。
+  // center … 中央揃え
+  // baseline … ベースラインで揃える
+
+
+  // 複数行にした時の揃え
+  align-content: space-between;
+  //   stretch（初期値）… 親要素の高さに合わせて広げて配置
+  //   flex-start … 親要素の開始位置から配置。上揃え。
+  //   flex-end … 親要素の終点から配置。下揃え。
+  //   center … 中央揃え
+  //   space-between … 最初と最後の子要素を上下の端に配置し、残りの要素は均等に間隔をあけて配置
+  //   space-around … 上下端にある子要素も含め、均等に間隔をあけて配置
+
+
+
+  .item1 {
+    flex: 0 1 auto;
+  }
+
+  // 順序の指定
+  // 初期値は0。マイナス値を含む数値のみ指定できます。
+  .item1 {
+    order: 2;
+  }
+
+  .item2 {
+    order: 3;
+  }
+
+  .item3 {
+    order: 1;
+  }
+
+
+  // flex-grow … 子要素の伸びる比率
+  // 初期値は0。マイナス値は無効です。
+  .item1 {
+    flex-grow: 2;
+  }
+
+  .item2 {
+    flex-grow: 3;
+  }
+
+  .item3 {
+    flex-grow: 1;
+  }
+
+  // 子要素の縮む比率
+  // 期値は1。マイナス値は無効です
+  .item1 {
+    flex-shrink: 2;
+  }
+
+  .item2 {
+    flex-shrink: 3;
+  }
+
+  .item3 {
+    flex-shrink: 1;
+  }
+
+  //子要素のベースとなる幅の指定
+  .item1 {
+    flex-basis: auto;
+  }
+
+  .item2 {
+    flex-basis: 200px;
+  }
+
+  .item3 {
+    flex-basis: 30%;
+  }
+
+  // flex … flex-grow、flex-shrink、flex-basisをまとめて指定
+  // 初期値は 0 1 auto。
+
+  //   align-self … 子要素の垂直方向の揃え
+  //   親要素に空きスペースがあった場合、
+  // 子要素を垂直方向のどの位置に配置するかを指定します。
+  // 親要素に指定する align-items と全く同じ機能ですが、
+  // こちらは子要素に対して指定します。この align-self での指定は、
+  // 親要素に記述する align-items よりも優先されます。
+  .item1 {
+    align-self: flex-end;
+  }
+
+  //   auto（初期値）… 親要素の align-items の値を継承
+  //   stretch … 親要素の高さ、またはコンテンツの一番多い子要素の高さに合わせて広げて配置
+  //   flex-start … 親要素の開始位置から配置。上揃え。
+  //   flex-end … 親要素の終点から配置。下揃え。
+  //   center … 中央揃え
+  //   baseline … ベースラインで揃える
+
+
+}
+

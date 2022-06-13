@@ -1,0 +1,46 @@
+{
+  "name": "pdfme-designer",
+  "waname": "pdfme-designer",
+  "version": "1.0.0",
+  "updatedDate": "",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "lint": "vue-cli-service lint",
+    "publish-development": "vue-cli-service build --mode development"
+  },
+  "volta": {
+    "node": "16.13.1",
+    "npm": "8.1.2"
+  },
+  "dependencies": {
+    "@pdfme/generator": "^1.0.13",
+    "@pdfme/ui": "^1.0.13",
+    "moment": "^2.29.3",
+    "tabulator-tables": "^5.2.1",
+    "vue": "^3.2.13",
+    "vue-router": "^4.0.3",
+    "vuex": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/google-libphonenumber": "^7.4.23",
+    "@typescript-eslint/eslint-plugin": "^5.4.0",
+    "@typescript-eslint/parser": "^5.4.0",
+    "@vue/cli-plugin-eslint": "~5.0.0",
+    "@vue/cli-plugin-router": "~5.0.0",
+    "@vue/cli-plugin-typescript": "~5.0.0",
+    "@vue/cli-plugin-vuex": "~5.0.0",
+    "@vue/cli-service": "~5.0.0",
+    "@vue/eslint-config-typescript": "^9.1.0",
+    "axios": "^0.26.1",
+    "eslint": "^7.32.0",
+    "eslint-plugin-vue": "^8.0.3",
+    "flatpickr": "^4.6.9",
+    "google-libphonenumber": "^3.2.27",
+    "js-cookie": "^3.0.1",
+    "sass": "^1.32.7",
+    "sass-loader": "^12.0.0",
+    "typescript": "~4.5.5"
+  }
+}

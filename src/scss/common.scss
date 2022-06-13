@@ -1,0 +1,169 @@
+html {
+    overscroll-behavior: none;
+}
+body {
+    background-color: rgb(255, 255, 255);
+
+}
+
+.overscroll-behavior-y-none {
+    overscroll-behavior: none;
+    >*{
+        overscroll-behavior: contain;
+    }
+}
+
+
+@import url(//use.fontawesome.com/releases/v5.14.0/css/all.css);
+
+
+@import "./bootstrap-v5/bootstrap.scss";
+@import "./_variables.scss";
+
+.btn {
+    text-decoration   : none;
+    cursor            : pointer;
+    border-radius     : 6px;
+    position          : relative;
+    font-size         : 16px;
+    height            : auto;
+    min-height        : 42px;
+    // min-width      : 80px;
+    display           : flex;
+    flex-direction    : row;
+    flex-wrap         : nowrap;
+    justify-content   : flex-start;
+    align-items       : center;
+    padding           : 0 9px;
+
+
+    &[disabled],
+    &:disabled {
+        cursor: default;
+    }
+
+    .loaderBase {
+        width            : 20px;
+        margin           : 0px -6px 0 3px;
+        height           : 20px;
+        background-repeat: no-repeat;
+        background-size  : contain;
+        opacity          : 0;
+        // background-image : url('~@/assets/img/spin.svg');
+
+        &.isLoading {
+            opacity: 1;
+        }
+    }
+
+    .fa,
+    .fas,
+    .far {
+        display: block;
+        margin : 0 3px 0 0;
+    }
+
+    //特定サイズ指定
+    &.btn-slim {
+        height       : 32px;
+        min-height   : auto;
+        border-radius: 3px;
+    }
+
+    &.btn-header {
+        height    : 38px;
+        min-height: auto;
+    }
+
+    &.btn-min {
+        min-height: 30px;
+        font-size : 14px;
+        min-height: auto;
+    }
+}
+
+
+
+.card {
+    border-top   : map-get($originalCard, 'outline-border-1px');
+    border-right : map-get($originalCard, 'outline-border-2px');
+    border-bottom: map-get($originalCard, 'outline-border-1px');
+    border-left  : map-get($originalCard, 'outline-border-2px');
+    border-radius: map-get($originalCard, 'border-radius');
+
+    >div:first-child {
+        border-radius: 0;
+    }
+
+    >div:last-child {
+        border-radius: 0;
+    }
+
+
+
+    // box-shadow   : $shadow;
+    &:not(.card-flat) {
+        box-shadow: $box-shadow;
+    }
+
+    box-sizing : border-box;
+    cursor     : default;
+
+
+
+    .card-slim {
+        padding: 4px 8px;
+    }
+
+
+    .card-header,
+    .card-body,
+    .card-footer {
+        border-top   : map-get($originalCard, 'outline-border-1px');
+        border-bottom: map-get($originalCard, 'outline-border-1px');
+
+        @media screen and (min-width: #{ 0 }px) and (max-width: #{ 600 - 0.1}px) {
+            padding: 4px;
+        }
+    }
+
+    .card-header {
+        user-select     : none;
+        background-color: map-get($originalCard, 'hedader-background-color');
+        color           : map-get($originalCard, 'hedader-color');
+        display         : flex;
+        justify-content : space-between;
+        align-items     : center;
+    }
+
+    .card-body {
+        background-color: map-get($originalCard, 'body-background-color');
+        color           : map-get($originalCard, 'body-color');
+        padding         : 8px;
+    }
+
+
+    .card-footer {
+        background-color: map-get($originalCard, 'footer-background-color');
+        color           : map-get($originalCard, 'footer-color');
+        display         : flex;
+        justify-content : space-between;
+        align-items     : center;
+
+    }
+
+    &.card-flat {
+        border-color: #717f93;
+
+        .card-header,
+        .card-body,
+        .card-footer {
+            border-color: #717f93;
+        }
+    }
+
+}
+
+
+@import "./_color.scss";
+@import "./_forms.scss";

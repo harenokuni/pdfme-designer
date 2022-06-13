@@ -1,0 +1,993 @@
+//--------------------------
+//使用する変数
+$color-warn  : #eb0000;
+$color-action: #e26f2c;
+$color-diff  : #e65d0e;
+
+
+
+$control-radius:$control-radius;
+
+$color-back-default : #ffffff;
+$color-back-disabled: #f3f3f3;
+
+$color-fore-default : #242627;
+$color-fore-disabled: #2a2a2a;
+$color-fore-disabled: #242627;
+
+$color-line-default  : #122c83;
+$color-line-activate : #122c83;
+$color-line-disabled : #b8b8b8;
+$color-line-warn     :#eb0000;
+$color-line-diff     : #e65d0e;
+
+$dropshadow-hover    : drop-shadow(0px 0px 5px 3px #035afd57);
+$dropshadow-diff     : drop-shadow(0px 0px 3px #ff5f0099);
+$dropshadow-activate : drop-shadow(0px 0px 3px #065dffa6);
+$dropshadow-warn     : drop-shadow(0px 0px 3px #f1000067);
+$dropshadow-disabled : drop-shadow(0px 0px 3px #cfcecebb);
+
+
+//------------------------------
+//FormControlの配下すべて
+.FormControl * {
+    position  : relative;
+    padding   : 0px;
+    margin    : 0px;
+    box-sizing: border-box;
+
+    & :not(i) {
+        font       : inherit;
+        font-weight: inherit;
+        font-family: inherit;
+        font-size  : 1em;
+    }
+}
+
+//Formコントロール基本
+.FormControl {
+    //基礎
+    padding        : 0px;
+    min-height     : 42px;
+    height         : auto;
+    border-radius  : 6px;
+    background-clip: padding-box;
+
+    font-size  : 16px;
+    font-weight: normal;
+    max-width  : 100%;
+
+}
+
+.FormControl.FormColtrolSlim {
+    min-height: 30px;
+}
+
+//Flex
+.FormControl {
+    display        : flex;
+    flex-direction : row;
+    flex-wrap      : nowrap;
+    justify-content: space-between;
+
+    .FormControlBody {
+        flex: 1 1 auto;
+    }
+
+    .FormControlIcon {
+        flex: 0 0 auto;
+    }
+}
+
+
+
+//-----------------------------------------------------------
+//枠線、影
+.FormControl {
+    border-width    : 1px;
+    border-style    : solid;
+    border-color    : $color-line-default;
+    background-color: $color-back-default;
+
+    transition: border-color 150ms ease-in-out,
+        filter 150ms ease-in-out;
+    will-change: filter;
+
+    &.hasWarn:not(.diff) {
+        border-color  : $color-line-warn;
+        -webkit-filter: $dropshadow-warn;
+        -moz-filter   : $dropshadow-warn;
+        -ms-filter    : $dropshadow-warn;
+        filter        : $dropshadow-warn;
+        transform     : translateZ(0);
+    }
+
+    &.diff {
+        border-color  : $color-line-default;
+        border-color  : $color-line-diff;
+        -webkit-filter: $dropshadow-diff;
+        -moz-filter   : $dropshadow-diff;
+        -ms-filter    : $dropshadow-diff;
+        filter        : $dropshadow-diff;
+        transform     : translateZ(0);
+    }
+
+    &.disabled {
+        border-color    : $color-line-default;
+        background-color: $color-back-disabled;
+        -webkit-filter  : none;
+        -moz-filter     : none;
+        -ms-filter      : none;
+        filter          : none;
+        transform       : translateZ(0);
+
+        &.diff {
+            border-color  : $color-line-default;
+            border-color  : $color-line-diff;
+            -webkit-filter: $dropshadow-diff;
+            -moz-filter   : $dropshadow-diff;
+            -ms-filter    : $dropshadow-diff;
+            filter        : $dropshadow-diff;
+            transform     : translateZ(0);
+        }
+
+    }
+
+    &.activate {
+        border-color  : $color-line-activate;
+        -webkit-filter: $dropshadow-activate;
+        -moz-filter   : $dropshadow-activate;
+        -ms-filter    : $dropshadow-activate;
+        filter        : $dropshadow-activate;
+        transform     : translateZ(0);
+    }
+}
+
+
+
+//-----------------------------------------------------------
+
+
+
+
+//-----------------------------------------------------------
+
+
+//Formのインプットとプレースホルダーを格納する要素
+.FormControl .FormControlBody {
+    display        : flex;
+    flex-direction : column;
+    flex-wrap      : nowrap;
+    justify-content: flex-start;
+    align-items    : stretch;
+
+    font-size  : 1em;
+    font-weight: normal;
+    width      : 100%;
+
+    .FormControlLabel {
+        flex           : 0 0 auto;
+        padding        : 0 3px;
+        user-select    : none;
+        font-size      : 1rem;
+        line-height    : 1rem;
+        font-weight    : normal;
+        display        : flex;
+        flex-wrap      : wrap;
+        justify-content: flex-start;
+        align-items    : center;
+        overflow       : hidden;
+
+        //ラベル内Span
+        [class*="FormControlLabel--"] {
+            margin       : 1px 1px 0 1px;
+            padding      : 1px 3px;
+            border-radius: 3px;
+            font-weight  : normal;
+            border-width : 0px;
+            line-height  : 1em;
+            font-size    : 0.7em;
+            font-weight  : normal;
+            height       : auto;
+            flex         : 0 0 auto;
+        }
+
+        .FormControlLabel--Placeholder {
+            padding  : 1px 0px 0 0;
+            font-size: 0.8em;
+            flex     : 1 1 auto;
+        }
+    }
+
+    .FormControlInput {
+        padding    : 0 0.3em;
+        flex       : 1 1 auto;
+        width      : 100%;
+        height     : auto;
+        display    : flex;
+        align-items: center;
+        user-select: none;
+
+        select,
+        textarea,
+        input:not([type="checkbox"].form-check-input) {
+            margin-top        : 1px;
+            width             : 100%;
+            height            : auto;
+            background-color  : transparent;
+            //標準表示の初期化
+            -webkit-appearance: none;
+            -moz-appearance   : none;
+            appearance        : none;
+            border            : 0px;
+            outline           : none;
+        }
+    }
+
+}
+
+//------------------------
+//アイコン
+.FormControl .FormControlIcon {
+    width          : 40px;
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+    cursor         : pointer;
+    font-size      : 1rem;
+
+    //------------------------
+    //境界線    
+    &::before {
+        content         : '';
+        display         : block;
+        position        : absolute;
+        display         : none;
+        height          : calc(100% - 4px);
+        top             : 2px;
+        width           : 1px;
+        background-color: gray;
+    }
+
+    &[data-sep="left"]::before {
+        display: block;
+        left   : 0px;
+    }
+
+    &[data-sep="right"]::before {
+        display: block;
+        right  : 0px;
+    }
+
+    //------------------------
+    //アイコン  
+
+    &::after {
+        display    : block;
+        position   : relative;
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        overflow   : visible;
+    }
+
+
+    &[data-icon="warn"]::after {
+        content: '\f071';
+        color  : $color-danger;
+    }
+
+    &[data-icon="delete"]::after {
+        content: '\f55a';
+        color  : $color-danger;
+    }
+
+
+    &[data-icon="calendar"]::after {
+        content: '\f073';
+        color  : $color-action;
+    }
+}
+
+//----------------------
+//特殊
+
+.FormControl {
+
+    .FormControlLabel--Icon-lenMessage {
+        color     : #ffffff;
+        transition: background-color 200ms;
+        opacity   : 1;
+
+        &[data-maxLen='0'] {
+            display: none;
+        }
+
+        &[data-last='0'] {
+            background-color: #ff0000;
+        }
+
+        &[data-last='1'] {
+            background-color: #fa541d;
+        }
+
+        &[data-last='2'] {
+            background-color: #fda00d;
+        }
+
+        &[data-last='3'] {
+            background-color: #fda00d;
+        }
+
+        background-color: #26900c;
+    }
+
+    .FormControlLabel--Icon-RowMessage {
+        color     : #ffffff;
+        transition: background-color 200ms;
+        opacity   : 1;
+
+        &[data-maxLen='0'] {
+            display: none;
+        }
+
+        &[data-last='0'] {
+            background-color: #ff0000;
+        }
+
+        &[data-last='1'] {
+            background-color: #fa541d;
+        }
+
+        background-color: #26900c;
+    }
+}
+
+
+
+//-----------------------------------------------------------
+//enable <> disabled
+.FormControl {
+    color           : $color-fore-default;
+    background-color: white;
+    color           : $color-fore-default;
+
+    .FormControlLabel--Placeholder {
+        color: #906a51;
+    }
+
+    .FormControlLabel--Icon-Require {
+        color           : #ffffff;
+        background-color: #af0000;
+    }
+
+    &.disabled {
+        color: $color-fore-disabled !important;
+
+        [class*="FormControlLabel--Icon"] {
+            color           : #ffffff !important;
+            background-color: #727272 !important;
+        }
+
+        select,
+        input {
+            -webkit-text-fill-color: inherit;
+            color                  : inherit;
+            opacity                : 1 !important;
+        }
+
+        .FormControlIcon:not(.FormControlIcon[data-icon="warn"]) {
+            cursor: default;
+
+            &::after {
+                color: inherit;
+                color: #908e8e !important;
+            }
+        }
+
+        .FormListSelect>.FormListSelectItem {
+            cursor: default;
+        }
+
+    }
+}
+
+//------------------------------------------
+
+
+//インプットパーツの集合体、内部パーツ同士が隣接した部分は角を丸くしない
+.FormGroup {
+    position       : relative;
+    width          : 100%;
+    max-width      : 100%;
+    display        : flex;
+    justify-content: space-between;
+    align-items    : stretch;
+    border-radius  : $control-radius;
+
+    >*:not(.FormGroupIcon) {
+        flex-grow  : 1;
+        flex-shrink: 1;
+        width      : auto;
+        flex-basis : auto;
+    }
+
+    >.FormGroup-Item50WithIcon {
+        width: calc(50% - 1em);
+    }
+
+    >.FormGroupIcon {
+        height          : auto;
+        flex-grow       : 1;
+        min-width       : 2em;
+        padding         : 0 0.5em;
+        min-height      : 0px;
+        display         : flex;
+        justify-content : center;
+        align-items     : center;
+        background-color: rgb(231, 231, 231);
+        border          : solid 1px $color-line-default;
+    }
+
+    >* {
+        border-top-left-radius    : 0px;
+        border-bottom-left-radius : 0px;
+        border-top-right-radius   : 0px;
+        border-bottom-right-radius: 0px;
+        border-top-width          : 1px;
+        border-right-width        : 0px;
+        border-bottom-width       : 1px;
+        border-left-width         : 1px;
+    }
+
+
+    >*:first-child {
+        border-top-left-radius   : $control-radius;
+        border-bottom-left-radius: $control-radius;
+    }
+
+    >*:last-child {
+        border-top-right-radius   : $control-radius;
+        border-bottom-right-radius: $control-radius;
+        border-right-width        : 1px;
+    }
+
+    >.FormGroupIcon {
+        padding   : 0.2em 0em;
+        min-height: 24px;
+
+        >* {
+            transform: rotate(90deg);
+        }
+    }
+
+
+
+    @each $breakpoint in map-keys($grid-breakpoints) {
+        $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+        @include media-breakpoint-up($breakpoint) {
+            >.FormGroup#{$infix}-Item50WithIcon {
+                width: calc(50% - 1em) !important;
+            }
+
+            &.FormGroup#{$infix}-Column {
+                flex-direction: column;
+
+                >*:first-child {
+                    border-top-left-radius    : $control-radius;
+                    border-top-right-radius   : $control-radius;
+                    border-bottom-left-radius : 0px;
+                    border-bottom-right-radius: 0px;
+                }
+
+                >* {
+                    border-top-left-radius    : 0px;
+                    border-bottom-left-radius : 0px;
+                    border-top-right-radius   : 0px;
+                    border-bottom-right-radius: 0px;
+
+                    border-top-width   : 1px;
+                    border-right-width : 1px;
+                    border-bottom-width: 0px;
+                    border-left-width  : 1px;
+                }
+
+                >*:last-child {
+
+                    border-top-left-radius    : 0px;
+                    border-top-right-radius   : 0px;
+                    border-bottom-left-radius : $control-radius;
+                    border-bottom-right-radius: $control-radius;
+                    border-bottom-width       : 1px;
+                }
+
+                >.FormGroupIcon {
+                    padding   : 0.2em 0em;
+                    min-height: 24px;
+
+                    >* {
+                        transform: rotate(90deg);
+                    }
+                }
+            }
+
+            &.FormGroup#{$infix}-Row {
+                flex-direction: row;
+
+                >*:first-child {
+                    border-top-left-radius    : $control-radius;
+                    border-top-right-radius   : 0px;
+                    border-bottom-right-radius: 0px;
+                    border-bottom-left-radius : $control-radius;
+
+                }
+
+                >* {
+                    border-top-left-radius    : 0px;
+                    border-top-right-radius   : 0px;
+                    border-bottom-right-radius: 0px;
+                    border-bottom-left-radius : 0px;
+                    border-top-width          : 1px;
+                    border-right-width        : 0px;
+                    border-bottom-width       : 1px;
+                    border-left-width         : 1px;
+                }
+
+
+                >*:last-child {
+                    border-top-left-radius    : 0px;
+                    border-top-right-radius   : $control-radius;
+                    border-bottom-right-radius: $control-radius;
+                    border-bottom-left-radius : 0px;
+
+                    border-right-width: 1px;
+                }
+
+                >.FormGroupIcon {
+                    padding   : 0 0.5em;
+                    min-height: 0px;
+
+                    >* {
+                        transform: rotate(0deg);
+                    }
+                }
+            }
+        }
+    }
+
+
+    >.FormGroupIcon {
+        padding   : 0 0.5em;
+        min-height: 0px;
+
+        >* {
+            transform: rotate(0deg);
+        }
+    }
+
+
+
+
+
+
+
+
+}
+
+
+//-------------------
+
+.form-datepicker-group {
+    width          : 100%;
+    position       : relative;
+    display        : flex;
+    justify-content: space-between;
+    align-items    : center;
+
+
+    border          : solid 1px $color-line-default;
+    border-radius   : 4px;
+    background-color: rgb(224, 224, 224);
+
+
+    .FormControl {
+        background-color: $color-back-default;
+        flex            : 0 0 calc(50% - 1em);
+        width           : calc(50% - 1em);
+
+    }
+
+    .FormControl:nth-child(1) {
+        border-radius            : 0px;
+        border-top-left-radius   : 4px;
+        border-bottom-left-radius: 4px;
+        border                   : solid 0px $color-line-default;
+        border-right             : solid 1px $color-line-default;
+    }
+
+    .FormControl:last-child {
+        border-radius             : 0px;
+        border-top-right-radius   : 4px;
+        border-bottom-right-radius: 4px;
+        border                    : solid 0px $color-line-default;
+        border-left               : solid 1px $color-line-default;
+    }
+
+
+
+
+    .form-datepicker-group-divider {
+        flex      : 0 0 2em;
+        text-align: center;
+
+        &::after {
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            content    : '\f337'
+        }
+
+    }
+
+    @media screen and (min-width: 000px) and (max-width: #{600 - 0.1}px) {
+        flex-direction: column;
+
+        .FormControl {
+            width: 100%;
+        }
+
+        .FormControl:nth-child(1) {
+            border-radius          : 0px;
+            border-top-left-radius : 4px;
+            border-top-right-radius: 4px;
+            border                 : solid 0px $color-line-default;
+            border-bottom          : solid 1px $color-line-default;
+        }
+
+        .FormControl:last-child {
+            border-radius             : 0px;
+            border-bottom-left-radius : 4px;
+            border-bottom-right-radius: 4px;
+            border                    : solid 0px $color-line-default;
+            border-top                : solid 1px $color-line-default;
+        }
+
+
+        .form-datepicker-group-divider {
+            flex : 0 0 auto;
+            width: 100%;
+
+            &::after {
+                content: '\f338'
+            }
+        }
+    }
+}
+
+
+//チェックボックス
+.FormControlCheck {
+    cursor: pointer;
+
+    &.disabled {
+        cursor: default;
+    }
+
+    display    : flex;
+    align-items: center;
+    padding    :2px 4px;
+
+    >.checkbox {
+        z-index   : -1;
+        position  : absolute;
+        background: aqua;
+    }
+
+
+    .FormControlCheck-Text {
+        line-height: 1em;
+    }
+
+    .FormControlCheck-Box {
+        position    : relative;
+        width       : 16px;
+        height      : 16px;
+        border      : solid 1px gray;
+        margin-right: 4px;
+
+        &:after {
+            transform          : rotate(180deg) scale(0, 1);
+            box-sizing         : border-box;
+            position           : absolute;
+            content            : ' ';
+            left               : -1px;
+            top                : -1px;
+            width              : 1em;
+            height             : 1em;
+            border-width       : 1px;
+            border-style       : solid;
+            border-top-color   : transparent;
+            border-right-color : #02a112;
+            border-bottom-color: #02a112;
+            border-left-color  : transparent;
+            opacity            : 0;
+            -webkit-transition : all 0.4s, opacity 0.8s;
+            transition         : all 0.4s, opacity 0.8s;
+        }
+
+        &.check-on {
+            background-color: rgb(234, 255, 241);
+
+            border: 1px solid #b3d1ff;
+
+            &:after {
+                font-size          : 1em;
+                -webkit-transform  : rotate(405deg) scale(0.6, 1);
+                transform          : rotate(405deg) scale(0.6, 1);
+                border-bottom-color: #0f6600;
+                border-bottom-width: 4px;
+                border-right-color : #0f6600;
+                border-right-width : 3px;
+                width              : 0.9em;
+                left               : 0.1em;
+                top                : -0.4em;
+                height             : 1.2em;
+                scale              : 0.7;
+                opacity            : 1;
+            }
+        }
+    }
+
+    >.FormControlCheck-Box {
+        background-color: white;
+        will-change     : filter;
+        transition      : border-color 150ms ease-in-out,
+            filter 150ms ease-in-out;
+    }
+
+    &.hasWarn:not(.diff)>.FormControlCheck-Box {
+        border-color  : $color-line-warn;
+        -webkit-filter: $dropshadow-warn;
+        -moz-filter   : $dropshadow-warn;
+        -ms-filter    : $dropshadow-warn;
+        filter        : $dropshadow-warn;
+        transform     : translateZ(0);
+    }
+
+    &.diff>.FormControlCheck-Box {
+        border-color  : $color-line-default;
+        border-color  : $color-line-diff;
+        -webkit-filter: $dropshadow-diff;
+        -moz-filter   : $dropshadow-diff;
+        -ms-filter    : $dropshadow-diff;
+        filter        : $dropshadow-diff;
+        transform     : translateZ(0);
+    }
+
+    &.disabled>.FormControlCheck-Box {
+        border-color    : $color-line-default;
+        background-color: $color-back-disabled;
+        -webkit-filter  : none;
+        -moz-filter     : none;
+        -ms-filter      : none;
+        filter          : none;
+        transform       : translateZ(0);
+    }
+
+    &.activate>.FormControlCheck-Box {
+        border-color  : $color-line-activate;
+        -webkit-filter: $dropshadow-activate;
+        -moz-filter   : $dropshadow-activate;
+        -ms-filter    : $dropshadow-activate;
+        filter        : $dropshadow-activate;
+        transform     : translateZ(0);
+    }
+
+}
+
+
+.FormTreeList {
+    width: 100%;
+
+    .FormTreeListGroup {
+        margin: 6px 6px 6px 0px;
+
+        >.FormTreeListGroupTitle {
+            padding-left: 15px;
+            display        : flex;
+            align-items    : center;
+            justify-content: space-between;
+
+            &::before,
+            &::after {
+                content : '';
+                position: absolute;
+
+            }
+
+            &::before {
+                width : 10px;
+                height: 100%;
+                left  : 0px;
+                top   : 0;
+            }
+
+            &::after {
+                width       : 0;
+                height      : 0;
+                left        : 0;
+                top         : 100%;
+                border-style: solid;
+                border-width: 10px 10px 0 0;
+                border-color: transparent;
+            }
+        }
+
+        >.FormTreeListGroupBody {
+            padding:5px 0 0 10px;
+
+            &::before {
+                content : '';
+                position: absolute;
+                width   : 5px;
+                height  : 100%;
+                left    : 0px;
+                top     : 0;
+            }
+        }
+
+        
+        >.FormTreeListGroupBody::before,
+        >.FormTreeListGroupTitle::before {
+            background-color: #797979;
+        }
+
+        >.FormTreeListGroupTitle::after {
+            border-top-color: #797979;
+            ;
+        }
+
+        @each $name,
+        $theme in $themes-color {
+
+            &.#{$name} {
+
+                >.FormTreeListGroupBody::before,
+                >.FormTreeListGroupTitle::before {
+                    background-color: map-get($theme, 'default-background-color') !important;
+                }
+
+                >.FormTreeListGroupTitle::after {
+                    border-top-color: map-get($theme, 'default-background-color') !important;
+                    ;
+                }
+            }
+        }
+    }
+
+
+
+    .FormListSelectItem {
+        display               : flex;
+        justify-content       : flex-start;
+        align-items           : center;
+        width                 : 100%;
+        // min-height         : $max-height;
+        padding               : 6px 6px 6px 6px;
+    }
+
+
+    .FrormListSelectTitle {
+        color    : gray;
+        font-size: 14px;
+        padding  : 6px 6px 0px 6px;
+    }
+
+
+    .FrormListSelectGroup {
+        padding-left: 4px;
+    }
+
+    .FrormListSelectCheckList {
+        padding-left: 4px;
+
+        &::before {
+            content         : '';
+            position        : absolute;
+            width           : 3px;
+            height          : 100%;
+            left            : 1px;
+            top             : 0;
+            background-color: rgb(165, 107, 107);
+        }
+    }
+}
+
+
+.FormInnerScroll {
+    overflow-x: hidden;
+    overflow-y: scroll;
+
+    @for $i from 1 to 100 {
+        &.FormInnerScroll-h-#{$i*10} {
+            height: #{$i*10}px !important;
+        }
+    }
+}
+
+
+
+
+.FormTextCheckList {
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    $max-height: 26px;
+    width      : 100%;
+    overflow-x : hidden;
+    overflow-y : auto;
+
+    height: 100%;
+
+
+    .FormTextCheckListItem {
+        display        : flex;
+        justify-content: flex-start;
+        align-items    : center;
+        width          : 100%;
+        height         : $max-height;
+        padding        : 6px 6px 6px 20px;
+
+
+        cursor: pointer;
+
+
+        &:hover {
+            background-color: rgb(218, 244, 255);
+
+        }
+
+        &::before,
+        &::after {
+            position: absolute;
+            top     : 0;
+            left    : 0;
+            width   : 20px;
+            ;
+            height         : 100%;
+            display        : flex;
+            justify-content: center;
+            align-items    : center;
+            font-family    : "Font Awesome 5 Free";
+
+        }
+
+        &::before {
+            font-weight: 400;
+            content    : '\f0c8';
+            color      : #c3c9c5;
+
+        }
+
+
+        &::after {
+            font-weight: 900;
+            color      : #0c7424;
+            content    : '\f00c';
+            transform  : scale(0);
+            transition : all 300ms;
+        }
+
+        &.selected {
+            background-color: rgb(247, 229, 213);
+
+
+
+            &::after {
+                transform: scale(1);
+            }
+
+        }
+    }
+
+}

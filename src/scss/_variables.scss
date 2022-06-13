@@ -1,0 +1,299 @@
+//------------------------------------------
+// $box-shadow  
+$box-shadow          :0px 0px 5px 2px rgba(26, 61, 156, 0.561);
+$box-shadow-hover    :2px 3px 5px 2px rgba(33, 62, 144, 0.5);
+$box-shadow-activate :3px 4px 6px 3px rgba(33, 62, 144, 0.5);
+$box-shadow-dark     : 0px 2px 9px 2px rgba(52, 63, 145, 88%);
+//------------------------------------------
+$base-color-app    : rgba(1, 52, 107, 0.659);
+$base-color-modal    : rgba(1, 52, 107, 0.659);
+$border-white-color:#2e3338;
+
+$border-color-dark:#102c58;
+$border-color-white:#ffffff;
+
+$control-radius:6px;
+
+
+//------------------------------------------
+//カラー設定
+
+$color-theme0  :#213a5f;
+$color-theme1  :#447aca;
+$color-theme2  :#9cd3ff;
+$color-link    :#CDF727;
+$color-success :#0f922d;
+$color-download:#0c7424;
+$color-action  :#f68708;
+$color-info    :#1CA5B8;
+$color-caution :#ff5e00;
+$color-paper   :#F0EBE6;
+$color-warning :#ebc312;
+$color-danger  :#e03a3a;
+$color-label   :#717f93;
+$color-disabled   :#bacee9;
+
+
+$theme0: ("-": #000,
+    "outline-border-color": #ffffff,
+    "default-background-color": $color-theme0 ,
+    "default-color": #ffffff,
+    "hover-background-color": #2c5797,
+    "hover-color": #ffffff,
+    "focus-background-color": #114695,
+    "focus-color": #ffffff,
+    "disabled-background-color": #6b80a0,
+    "disabled-color": #cccccc,
+    "active-background-color": #213a5f,
+    "active-color": #ffffff,
+);
+
+$theme1: ("-": #000,
+    "outline-border-color": #ffffff,
+    "outline-border-color-dark": #447aca,
+    "default-background-color": $color-theme1 ,
+    "default-color": #ffffff,
+    "hover-background-color": #4388c0,
+    "hover-color": #ffffff,
+    "focus-background-color": #1778c8,
+    "focus-color": #ffffff,
+    "disabled-background-color": #6b80a0,
+    "disabled-color": #cccccc,
+    "active-background-color": #0a68b6,
+    "active-color": #ffffff,
+);
+
+$theme2: ("-": #000,
+    "outline-border-color": #ffffff,
+    "outline-border-color-dark": #447aca,
+    "default-background-color": $color-theme2,
+    "default-color": #181818,
+    "hover-background-color": #447aca,
+    "hover-color": #ffffff,
+    "focus-background-color": #0e489e,
+    "focus-color": #ffffff,
+    "disabled-background-color": #6b80a0,
+    "disabled-color": #cccccc,
+    "active-background-color": #319ffa,
+    "active-color": #ffffff,
+);
+
+$success: ("-": #000,
+    "outline-border-color": #ffffff,
+    "outline-border-color-dark": #447aca,
+    "default-background-color": #1c8b36,
+    "default-color": #ffffff,
+    "hover-background-color": #2db14c,
+    "hover-color": #ffffff,
+    "focus-background-color": #0e9c2f,
+    "focus-color": #ffffff,
+    "disabled-background-color": #6b80a0,
+    "disabled-color": #cccccc,
+    "active-background-color": #11bd39,
+    "active-color": #ffffff,
+);
+
+$download: ("-": #000,
+    "outline-border-color": #ffffff,
+    "outline-border-color-dark": #447aca,
+    "default-background-color": #0c7424,
+    "default-color": #ffffff,
+    "hover-background-color": #21a33f,
+    "hover-color": #ffffff,
+    "focus-background-color": #10a132,
+    "focus-color": #ffffff,
+    "disabled-background-color": #6b80a0,
+    "disabled-color": #cccccc,
+    "active-background-color": #059c28,
+    "active-color": #ffffff,
+);
+
+$info: ("-": #000,
+    "outline-border-color": #ffffff,
+    "outline-border-color-dark": #118190,
+    "default-background-color": $color-info  ,
+    "default-color": #ffffff,
+    "hover-background-color": #33c3d6,
+    "hover-color": #ffffff,
+    "focus-background-color": #179cad,
+    "focus-color": #ffffff,
+    "disabled-background-color": #6b80a0,
+    "disabled-color": #cccccc,
+    "active-background-color": rgb(86, 173, 245),
+    "active-color": #ffffff,
+);
+
+$link: ("-": #000,
+    "outline-border-color": #ffffff,
+    "outline-border-color-dark": #447aca,
+    "default-background-color": $color-link ,
+    "default-color": #2c2c2c,
+    "hover-background-color": #e6ff81,
+    "hover-color": #2c2c2c,
+    "focus-background-color": #9fc30e,
+    "focus-color": #2c2c2c,
+    "disabled-background-color": #6b80a0,
+    "disabled-color": #cccccc,
+    "active-background-color": #afd615,
+    "active-color": #2c2c2c,
+);
+
+$action: ("-": #000,
+    "outline-border-color": #ffffff,
+    "outline-border-color-dark": #492314,
+    "default-background-color": $color-action,
+    "default-color": #ffffff,
+    "hover-background-color": #fd9e31,
+    "hover-color": #ffffff,
+    "focus-background-color": #f68708,
+    "focus-color": #ffffff,
+    "disabled-background-color": #6b80a0,
+    "disabled-color": #cccccc,
+    "active-background-color": #d17000,
+    "active-color": #ffffff,
+);
+
+
+$caution: ("-": #000,
+    "outline-border-color": #ffffff,
+    "outline-border-color-dark": #492314,
+    "default-background-color":$color-caution,
+    "default-color": #ffffff,
+    "hover-background-color": #fd9e31,
+    "hover-color": #ffffff,
+    "focus-background-color": #f68708,
+    "focus-color": #ffffff,
+    "disabled-background-color": #6b80a0,
+    "disabled-color": #cccccc,
+    "active-background-color": #d17000,
+    "active-color": #ffffff,
+);
+
+
+
+$warning: ("-": #000,
+    "outline-border-color": #ffffff,
+    "outline-border-color-dark": #000000,
+    "default-background-color": $color-warning,
+    "default-color": #500606,
+    "hover-background-color": #ffe46c,
+    "hover-color": #9f0f0f,
+    "focus-background-color": #ebc312,
+    "focus-color": #9f0f0f,
+    "disabled-background-color": #6b80a0,
+    "disabled-color": #cccccc,
+    "active-background-color": #ffd517,
+    "active-color": #9f0f0f,
+);
+
+$danger: ("-": #000,
+    "outline-border-color": #ffffff,
+    "outline-border-color-dark": #447aca,
+    "default-background-color": $color-danger ,
+    "default-color": #ffffff,
+    "hover-background-color": #f16060,
+    "hover-color": #ffffff,
+    "focus-background-color": #ce1919,
+    "focus-color": #ffffff,
+    "disabled-background-color": #6b80a0,
+    "disabled-color": #cccccc,
+    "active-background-color": #fd0e0e,
+    "active-color": #ffffff,
+);
+
+
+$paper: ("-": #000,
+    "outline-border-color": #dde1e6,
+    "outline-border-color-dark": #447aca,
+    "default-background-color": #F0EBE6,
+    "default-color": #4d4d4d,
+    "hover-background-color": #d7dbe0,
+    "hover-color": #4d4d4d,
+    "focus-background-color": #d7dbe0,
+    "focus-color": #4d4d4d,
+    "disabled-background-color": #d7dbe0,
+    "disabled-color": #4d4d4d,
+    "active-background-color": #d7dbe0,
+    "active-color": #4d4d4d,
+);
+
+
+$label: ("-": #000,
+    "outline-border-color": #dde1e6,
+    "outline-border-color-dark": #447aca,
+    "default-background-color": #717f93,
+    "default-color": #ffffff,
+    "hover-background-color": #d7dbe0,
+    "hover-color": #4d4d4d,
+    "focus-background-color": #d7dbe0,
+    "focus-color": #4d4d4d,
+    "disabled-background-color": #d7dbe0,
+    "disabled-color": #4d4d4d,
+    "active-background-color": #d7dbe0,
+    "active-color": #4d4d4d,
+);
+
+
+
+
+$disabled: ("-": #000,
+    "outline-border-color": #dde1e6,
+    "outline-border-color-dark": #447aca,
+    "default-background-color": #bacee9,
+    "default-color": #2b2b2e,
+    "hover-background-color": #d7dbe0,
+    "hover-color": #4d4d4d,
+    "focus-background-color": #d7dbe0,
+    "focus-color": #4d4d4d,
+    "disabled-background-color": #d7dbe0,
+    "disabled-color": #4d4d4d,
+    "active-background-color": #d7dbe0,
+    "active-color": #4d4d4d,
+);
+
+
+
+
+
+
+$themes-color: ("theme0": $theme0,
+    "theme1": $theme1,
+    "theme2": $theme2,
+    "success": $success,
+    "download": $download,
+    "info": $info,
+    "action": $action,
+    "warning": $warning,
+    "danger": $danger,
+    "paper": $paper,
+    "link": $link,
+    "label": $label,
+    "caution": $caution,
+    "disabled": $disabled,
+);
+
+
+
+
+
+
+$originalCard: ("-": #000,
+    "hedader-background-color": map-get($theme1, 'default-background-color'),
+    "hedader-color": map-get($theme1, 'default-color'),
+
+    "body-background-color": map-get($paper, 'default-background-color'),
+    "body-color": map-get($paper, 'default-color'),
+
+    "footer-background-color": map-get($theme2, 'default-background-color'),
+    "footer-color": map-get($theme2, 'default-color'),
+
+    "outline-border-1px":1px solid #ffffff,
+    "outline-border-2px":2px solid #ffffff,
+    "card-white-border":2px solid #ffffff,
+    "card-white-border-none":2px solid transparent,
+
+    "card-border-color": #ffffff,
+    "card-border-width": 2px,
+    "border-radius": 4px,
+    "card-border-row":2px solid #ffffff,
+);
