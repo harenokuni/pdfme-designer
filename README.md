@@ -6,7 +6,7 @@ PDFMEのDesignerで帳票系schemaのメンテ用サンプル
 https://harenokuni.github.io/pdfme-designer-test/
  
 
-## 注意
+## 注意①
 帳票の基準になる要素の入力項目名はゼロで終わる名前で統一しています。  
  *  対象となる例
      *  hgoe0
@@ -18,6 +18,11 @@ https://harenokuni.github.io/pdfme-designer-test/
 ※このルールはなんとなくの気分で作ったので・・・・
 
 
+## 注意②
+画面右上の自動リスト生成をONにすると
+Designer側で編集したあとにDesignerが再描画される挙動が発生します。
+XやYなどの値を変更する場合、再描画されると入力中の要素からフォーカスが外れるので
+テンプレートの編集をするときはOFFにしていたほうが良いと思います。
 
 
 
