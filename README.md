@@ -1,6 +1,10 @@
-# pdfme-designer(サンプル)
- 
-PDFMEのDesignerで帳票系schemaのメンテ用サンプル
+# これはなに？
+
+PDF生成ライブラリ「pefme」 に含まれるUI系ツール「Designer」で帳票系のschemaの管理を楽にするツールをVue3で作成しました。
+
+
+本家はこちら 
+https://github.com/pdfme/pdfme
  
 ## DEMO用ページ
 https://harenokuni.github.io/pdfme-designer-test/
@@ -29,3 +33,4 @@ XやYなどの値を変更する場合、再描画されると入力中の要素
  
 ## めも
 純正側でこんな機能が採用されるとうれしい
+→作者様よりご検討中との大変ありがたいご連絡がありました。👏👏👏👏
